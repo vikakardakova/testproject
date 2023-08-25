@@ -60,11 +60,11 @@ function recursiveAddition(value) {
 
   if (value < 10) 
   {
-
-    console.log (value + 2)
-    // recursiveAddition(value)
+    value += 2;
+    console.log (value)
+    recursiveAddition(value)
   }
   else return
 }
 
-recursiveAddition(5); // виведе в консоль по черзі 5, 7, 9
+recursiveAddition(1); // виведе в консоль по черзі 5, 7, 9

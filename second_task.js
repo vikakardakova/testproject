@@ -48,7 +48,14 @@ console.log(arrayOfEvens(initialArray2)); // виводить [ 2, 6, 12 ]
  */
 
 function createArray(element) {
-  for (let i = 0; i < 30; i = i + i) 
-    console.log(element[i]);
+
+    const sequenceArray = [];
+    let currentNumber = element;
+    while (currentNumber <= 30) {  // тут ітерація до 30
+      sequenceArray.push(currentNumber); // тут зберігаєте поточне значення у масиві
+      currentNumber = currentNumber + element; // тут додаєте до поточного значення сам елемент
+    }
+    return sequenceArray; // повертаєте сформований масив
+
 }
 console.log(createArray(5)); // виведе [ 5, 10, 15, 20, 25, 30 ]

@@ -3,22 +3,14 @@ export class Employee {
     this.id = id;
     this.salary = salary;
 }
-
-static compareSalary(userOne, userSecond)
-{
+static compareSalary(userOne, userSecond){
     if (userOne.salary > userSecond.salary)
     {
-        return userOne + ' has greater salary';
+        return `User with id ${userOne.id} has greater salary`;
     }
-    else if (userSecond.salary > userOne.salary)
-    {
-        return userSecond + ' has greater salary';
+    else if (userSecond.salary > userOne.salary){
+        return `User with id ${userSecond.id} has greater salary`;
     }
-    else
-    {
+    else{
         return "salaries are equal";
-    }
-
-}
-
-}
+    }}}

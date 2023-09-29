@@ -21,11 +21,14 @@ console.log(Employee.compareSalary(dev, dev2)); // виведе salaries are equ
    зробити властивість id незмінною та унеможливити її видалення. Строки для перевірки 
    зміни чи видалення властивості можна коментувати для перевірки роботи скрипта у подальшому. */
 
-const newDev = new Dev(1, 3000);
-// ваш код
+const newDev = new Dev(1, 3000); 
+Object.defineProperty(newDev, "id", {
+  writable: false,
+  configurable: false
+});
 
-newDev.id = 15; // видасть помилку TypeError: Cannot assign to read only property 'id' of object '#<Dev>'
-delete newDev.id; // видасть помилку TypeError: Cannot delete property 'id' of #<Dev>
+//newDev.id = 15; // видасть помилку TypeError: Cannot assign to read only property 'id' of object '#<Dev>'
+//delete newDev.id; // видасть помилку TypeError: Cannot delete property 'id' of #<Dev>
 for (let key in newDev) {
   console.log(newDev[key]); // виведе почергово 1 та 3000
 }
